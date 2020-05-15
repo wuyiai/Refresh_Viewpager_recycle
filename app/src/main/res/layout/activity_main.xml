@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/layout_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.haishan.refresh_viewpager_recycle.ObservableNestScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <android.support.design.widget.CoordinatorLayout
+                    android:id="@+id/coordinatorLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.design.widget.AppBarLayout
+                        android:id="@+id/appBarLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_behavior=".FlingBehavior">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="800dp"
+                            android:background="@color/hh_color_02D483"
+                            android:gravity="center"
+                            android:text="中间view"
+                            app:layout_scrollFlags="scroll|exitUntilCollapsed" />
+
+                        <com.flyco.tablayout.SlidingTabLayout
+                            android:id="@+id/slidingTabLayoutType"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:background="@color/hh_color_F7F7F7"
+                            android:fitsSystemWindows="true"
+                            app:tl_indicator_color="@color/hh_color_FF4646"
+                            app:tl_indicator_corner_radius="2dp"
+                            app:tl_indicator_gravity="BOTTOM"
+                            app:tl_indicator_height="3dp"
+                            app:tl_indicator_width="22dp"
+                            app:tl_tab_padding="10dp"
+                            app:tl_tab_space_equal="true"
+                            app:tl_textBold="true"
+                            app:tl_textSelectColor="@color/hh_color_333333"
+                            app:tl_textUnselectColor="@color/hh_color_333333"
+                            app:tl_textsize="15sp" />
+
+                    </android.support.design.widget.AppBarLayout>
+
+
+                        <com.haishan.refresh_viewpager_recycle.FillViewpager
+                            android:id="@+id/viewpager"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                            android:background="@color/hh_color_FF4646"
+                            ></com.haishan.refresh_viewpager_recycle.FillViewpager>
+                </android.support.design.widget.CoordinatorLayout>
+            </LinearLayout>
+        </com.haishan.refresh_viewpager_recycle.ObservableNestScrollView>
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+</LinearLayout>
